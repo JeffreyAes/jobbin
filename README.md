@@ -1,4 +1,4 @@
-# Welcome to Jobbin!
+# Welcome to Jobbin'!
 Jobbin is a simple and easy to use app designed to make job hunting a breeze. Build your own checklist so you never waste time applying to the same job more than once.
 With Jobble you can dynamically and effortlessly log different job listings around as you progress in your job search. Just applied to a job? add it to your Applications Table. 3 days later you get an interview for it? drag that sucker into the Interview table! Plus you can create your own tables so whatever it is you need to track, Jobbin's got you covered.
 
