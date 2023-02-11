@@ -9,20 +9,20 @@ Once you've created your board you will be able to add tables. Tables are column
 
 By default, all boards come with 5 tables:
 
-# Wishlist 
-   •tracks the jobs you want and haven't applied to yet
+      # Wishlist 
+         •tracks the jobs you want and haven't applied to yet
 
- # Applied 
-   •tracks the jobs you have already applied to
+      # Applied 
+         •tracks the jobs you have already applied to
 
- # Interview
-   •tracks interviews that have been scheduled
+      # Interview
+         •tracks interviews that have been scheduled
 
- # Rejections 
-   •tracks rejection letters
+      # Rejections 
+         •tracks rejection letters
 
- # Offers 
-    •tracks job offers
+      # Offers 
+          •tracks job offers
     
 
 But of course you can create your own *Custom Tables* as well! :)
