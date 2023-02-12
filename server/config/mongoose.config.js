@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-mongoose.connect("mongodb://0.0.0.0:27017/playermanagerdb", {
+mongoose.connect("mongodb://0.0.0.0:27017/jobbindb", {
     useNewUrlParser: true,
     useUnifiedTopology: true,
 })

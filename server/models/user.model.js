@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const bcrypt = require('bcrypt');
 const UserSchema = new mongoose.Schema({
     username: {
         type: String,
@@ -16,41 +17,41 @@ const UserSchema = new mongoose.Schema({
         type: [Object],
         default: []
     },
-    table: {
-        type: [Object],
-        // default: {wishlist: [], applied: [], interview: [], offer: [], rejected: []}
-        default: [{
-            list:
-            {
-                name: wishlist,
-                value: []
-            }
-        }, {
-            list:
-            {
-                name: applied,
-                value: []
-            }
-        }, {
-            list:
-            {
-                name: interview,
-                value: []
-            }
-        }, {
-            list:
-            {
-                name: offer,
-                value: []
-            }
-        }, {
-            list:
-            {
-                name: rejecteed,
-                value: []
-            }
-        }]
-    }
+    // table: {
+    //     type: [Object],
+    //     // default: {wishlist: [], applied: [], interview: [], offer: [], rejected: []}
+    //     default: [{
+    //         list:
+    //         {
+    //             name: "wishlist",
+    //             value: []
+    //         }
+    //     }, {
+    //         list:
+    //         {
+    //             name: "applied",
+    //             value: []
+    //         }
+    //     }, {
+    //         list:
+    //         {
+    //             name: "interview",
+    //             value: []
+    //         }
+    //     }, {
+    //         list:
+    //         {
+    //             name: "offer",
+    //             value: []
+    //         }
+    //     }, {
+    //         list:
+    //         {
+    //             name: "denied",
+    //             value: []
+    //         }
+    //     }]
+    // }
 
 }, { timestamps: true })
 
