@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import { useParams } from 'react-router-dom'
+import BoardTable from '../components/BoardTable'
 
 
 
@@ -49,24 +50,7 @@ const Dashboard = (props) => {
     return (
         <div>
         <h1>{user?.username}</h1>
-        {loaded && user.board.map((board, i) => 
-        <div key={i} className="d-flex justify-content-center">
-            {board.table.list.map((list, i) =>
-            <table className='table table-striped'>
-                <thead>
-                    <tr>
-                        <th key={i}>{list.name}</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td key={i}>{list.value}</td>
-                    </tr>
-                </tbody>
-            </table>
-            )}
-        </div>
-        )}
+        <BoardTable user={user} setUser={setUser} loaded={loaded} />
         
         </div>
     )
