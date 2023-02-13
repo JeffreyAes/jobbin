@@ -25,7 +25,7 @@ const UserRegister = (props) => {
         }, { withCredentials: true })
             .then(res => {
                 props.setLogged(true)
-                navigate(`/dashboard/`)
+                navigate(`/dashboard/${res.data.id}`)
             })
             .catch(err => {
                 console.log(err)

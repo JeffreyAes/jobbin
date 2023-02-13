@@ -21,7 +21,7 @@ const UserLogin = (props) => {
             .then(res => {
                 props.setLogged(true)
                 console.log(res.data)
-                navigate(`/dashboard/`)
+                navigate(`/dashboard/${res.data.id}`)
             })
             .catch(err => {
                 console.log(err.response)

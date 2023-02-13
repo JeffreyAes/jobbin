@@ -14,7 +14,7 @@ function App() {
       <Routes>
         <Route element={<Navigate to='/register' replace />} path='/' ></Route>
         <Route element={<UserRegister logged={logged} setLogged={setLogged} />} path='/register' ></Route>
-        <Route element={<Dashboard logged={logged} setLogged={setLogged} />} path='/dashboard' ></Route>
+        <Route element={<Dashboard logged={logged} setLogged={setLogged} />} path='/dashboard/:id' ></Route>
       </Routes>
     </div>
   );
