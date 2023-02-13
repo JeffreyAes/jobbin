@@ -12,6 +12,7 @@ const BoardTable = (props) => {
 
             {loaded && user.board.map((board, i) =>
                 <div key={i} className="d-flex justify-content-center">
+                    <h3>{board.boardName}</h3>
                     <table className='table table-striped'>
                         <thead>
                             <tr>

@@ -25,6 +25,33 @@ const UserRegister = (props) => {
         }, { withCredentials: true })
             .then(res => {
                 props.setLogged(true)
+                // logic for setting default board:
+                let arr = []
+                let date = new Date();
+                let today = new Date(date.getFullYear(), 1).toLocaleDateString()
+                arr.push({
+                    boardName: `${today}'s job search`,
+                    table: {
+                        list:
+                            [
+                                { name: "wishlist", value: [] }, { name: "applied", value: [] },
+                                { name: "interview", value: [] }, { name: "offer", value: [] }, { name: "denied", value: [] }
+                            ]
+                    }
+                })
+                axios.put('http://localhost:8000/api/users/' + res.data.id, {
+                    board: arr
+                }, { withCredentials: true })
+                    .then(res => {
+                        console.log(res)
+                        console.log(res.data.board.boardName)
+                    })
+                    .catch(err => {
+                        console.log(err)
+
+                    })
+
+
                 navigate(`/dashboard/${res.data.id}`)
             })
             .catch(err => {
