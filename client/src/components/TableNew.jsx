@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import { useParams } from 'react-router-dom'
 
-const AddTable = (props) => {
+const TableNew = (props) => {
     const { id } = useParams()
     const user = props.user
     const setUser = props.setUser
@@ -39,4 +39,4 @@ const AddTable = (props) => {
 
 }
 
-export default AddTable
+export default TableNew

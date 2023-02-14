@@ -3,7 +3,7 @@ import axios from 'axios'
 import { useParams } from 'react-router-dom'
 import BoardTable from '../components/BoardTable'
 import BoardList from '../components/BoardList'
-import AddBoard from '../components/AddBoard'
+import BoardNew from '../components/BoardNew'
 
 
 
@@ -28,7 +28,7 @@ const Dashboard = (props) => {
     return (
         <div>
         <BoardList user={user} setUser={setUser} loaded={loaded} boardIndex={boardIndex} setBoardIndex={setBoardIndex} />
-        <h1>{user?.username} <AddBoard user={user}/></h1>
+        <h1>{user?.username} <BoardNew user={user}/></h1>
         <BoardTable user={user} setRerender={setRerender} setUser={setUser} loaded={loaded } boardIndex={boardIndex} setBoardIndex={setBoardIndex} />
         
         </div>

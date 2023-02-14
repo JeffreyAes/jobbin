@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import { useParams } from 'react-router-dom'
 
-const AddBoard = (props) => {
+const BoardNew = (props) => {
     const { id } = useParams()
     const user = props.user
 
@@ -43,4 +43,4 @@ const AddBoard = (props) => {
 
 }
 
-export default AddBoard
+export default BoardNew
