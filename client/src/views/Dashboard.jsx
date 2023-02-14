@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import { useParams } from 'react-router-dom'
 import BoardTable from '../components/BoardTable'
+import BoardList from '../components/BoardList'
+import AddBoard from '../components/AddBoard'
 
 
 
@@ -9,6 +11,7 @@ const Dashboard = (props) => {
     const { id } = useParams()
     const [user, setUser] = useState()
     const [loaded, setLoaded] = useState(false);
+    const [boardIndex, setBoardIndex] = useState(0)
     useEffect(() => {
         axios.get('http://localhost:8000/api/users/' + id, { withCredentials: true })
             .then(res => {
@@ -21,8 +24,9 @@ const Dashboard = (props) => {
     
     return (
         <div>
-        <h1>{user?.username}</h1>
-        <BoardTable user={user} setUser={setUser} loaded={loaded} />
+        <BoardList user={user} setUser={setUser} loaded={loaded} boardIndex={boardIndex} setBoardIndex={setBoardIndex} />
+        <h1>{user?.username} <AddBoard user={user}/></h1>
+        <BoardTable user={user} setUser={setUser} loaded={loaded } boardIndex={boardIndex} setBoardIndex={setBoardIndex} />
         
         </div>
     )
