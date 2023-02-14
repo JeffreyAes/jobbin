@@ -10,8 +10,7 @@ const AddBoard = (props) => {
 
     const onSubmitHandler = () => {
         let arr = user.board
-        let date = new Date();
-        let today = new Date(date.getFullYear(), 1).toLocaleDateString()
+        let today = new Date().getFullYear()
         arr.push({
             boardName: `${today}'s job search`,
             table: {

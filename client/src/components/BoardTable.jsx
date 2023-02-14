@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import { useParams } from 'react-router-dom'
+import AddTable from './AddTable'
 
 const BoardTable = (props) => {
     const user = props.user
-    const setUser = props.user
+    const setUser = props.setUser
     const loaded = props.loaded
     const boardIndex = props.boardIndex
 
@@ -19,7 +20,7 @@ const BoardTable = (props) => {
                                 {user?.board[boardIndex].table.list.map((list, i) =>
                                     <th key={i} >{list.name} <button>delete</button></th>
                                 )}
-                                <td ><button className='btn btn-info text-white'>Add List</button></td>
+                                <td ><AddTable user={user} setUser={setUser} setRerender={props.setRerender}  boardIndex={boardIndex}  /></td>
                             </tr>
                         </thead>
                         <tbody>
@@ -31,7 +32,7 @@ const BoardTable = (props) => {
                             </tr>
                             <tr>
                                 {user?.board[boardIndex].table.list.map((list, i) =>
-                                    <td key={i}>{list.value.length > 0 ? list.value  : "‎  "  } </td>
+                                    <td key={i}>{list.value? list.value  : "‎  "  } </td>
                                 )}
                                 <td></td>
                             </tr>
