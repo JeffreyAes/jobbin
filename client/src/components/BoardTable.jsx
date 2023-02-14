@@ -2,13 +2,13 @@ import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import { useParams } from 'react-router-dom'
 import TableNew from './TableNew'
+import TableDelete from './TableDelete'
 
 const BoardTable = (props) => {
     const user = props.user
     const setUser = props.setUser
     const loaded = props.loaded
     const boardIndex = props.boardIndex
-    const [tableIndex, setTableIndex] = useState(0)
 
     return (
         <div className="">
@@ -19,7 +19,12 @@ const BoardTable = (props) => {
                         <thead>
                             <tr>
                                 {user?.board[boardIndex].table.list.map((list, i) =>
-                                    <th key={i} >{list.name} <button>delete</button></th>
+                                    <th key={i} >{list.name} <TableDelete 
+                                    tableIndex={i}
+                                    user={user} 
+                                    setUser={setUser} 
+                                    setRerender={props.setRerender}  
+                                    boardIndex={boardIndex} /> </th>
                                 )}
                                 <td ><TableNew user={user} setUser={setUser} setRerender={props.setRerender}  boardIndex={boardIndex}  /></td>
                             </tr>
