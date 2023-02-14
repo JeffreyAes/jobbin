@@ -13,6 +13,7 @@ import ListItemText from '@mui/material/ListItemText';
 import InboxIcon from '@mui/icons-material/MoveToInbox';
 import MailIcon from '@mui/icons-material/Mail';
 import DehazeIcon from '@mui/icons-material/Dehaze';
+import BoardDelete from './BoardDelete';
 
 const BoardList = (props) => {
     const user = props.user
@@ -49,16 +50,17 @@ const BoardList = (props) => {
         >
             <List>
                 {loaded && user.board.map((text, index) => (
-                    <button key={index} onClick={() => {
-                        selectBoard(index)
-                      }}>
-                    <ListItem   disablePadding>
+                    <ListItem key={index}  disablePadding>
                         <ListItemButton >
+                        <button  onClick={() => {
+                            selectBoard(index)
+                          }}>
                             
                             <ListItemText    primary={text.boardName} />
+                    </button>
+                            <BoardDelete user={user} boardIndex={index} setBoardIndex={setBoardIndex} setRerender={props.setRerender} />
                         </ListItemButton>
                     </ListItem>
-                    </button>
                 ))}
             </List>
             

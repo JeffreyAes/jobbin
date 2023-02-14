@@ -27,7 +27,7 @@ const Dashboard = (props) => {
     
     return (
         <div>
-        <BoardList user={user} setUser={setUser} loaded={loaded} boardIndex={boardIndex} setBoardIndex={setBoardIndex} />
+        <BoardList user={user} setRerender={setRerender} setUser={setUser} loaded={loaded} boardIndex={boardIndex} setBoardIndex={setBoardIndex} />
         <h1>{user?.username} <BoardNew user={user}/></h1>
         <BoardTable user={user} setRerender={setRerender} setUser={setUser} loaded={loaded } boardIndex={boardIndex} setBoardIndex={setBoardIndex} />
         
