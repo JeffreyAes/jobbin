@@ -1,12 +1,12 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import axios from 'axios'
 import { useParams } from 'react-router-dom'
 import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
-import InputLabel from '@mui/material/InputLabel';
-import MenuItem from '@mui/material/MenuItem';
-import Select from '@mui/material/Select';
+// import InputLabel from '@mui/material/InputLabel';
+// import MenuItem from '@mui/material/MenuItem';
+// import Select from '@mui/material/Select';
 
 
 const JobForm = (props) => {
@@ -16,8 +16,8 @@ const JobForm = (props) => {
     const tableIndex = props.tableIndex
     const [jobTitle, setJobTitle] = useState("")
     const [company, setCompany] = useState("")
-    const [newBoardIndex, setNewBoardIndex] = useState(boardIndex)
-    const [newTableIndex, setNewTableIndex] = useState(tableIndex)
+    // const [newBoardIndex, setNewBoardIndex] = useState(boardIndex)
+    // const [newTableIndex, setNewTableIndex] = useState(tableIndex)
 
     const handleSubmit = e => {
         e.preventDefault();

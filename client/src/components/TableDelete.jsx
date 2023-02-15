@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import axios from 'axios'
 import { useParams } from 'react-router-dom'
 
 const TableDelete = (props) => {
     const { id } = useParams()
     const user = props.user
-    const setUser = props.setUser
+    // const setUser = props.setUser
     const boardIndex = props.boardIndex
     const tableIndex = props.tableIndex
 

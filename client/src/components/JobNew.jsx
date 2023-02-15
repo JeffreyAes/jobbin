@@ -1,14 +1,6 @@
-import React, { useEffect, useState } from 'react'
-import axios from 'axios'
-import { useParams, Routes, Route, useNavigate } from 'react-router-dom'
-import JobForm from './JobForm'
+import React from 'react'
 
 const JobNew = (props) => {
-    const { id } = useParams()
-    const navigate = useNavigate()
-    const user = props.user
-    const boardIndex = props.boardIndex
-    const tableIndex = props.tableIndex
     const setTableIndex = props.setTableIndex
 
 

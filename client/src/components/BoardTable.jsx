@@ -1,6 +1,4 @@
-import React, { useEffect, useState } from 'react'
-import axios from 'axios'
-import { useParams } from 'react-router-dom'
+import React from 'react'
 import TableNew from './TableNew'
 import TableDelete from './TableDelete'
 import JobNew from './JobNew'
@@ -8,7 +6,7 @@ import JobNew from './JobNew'
 const BoardTable = (props) => {
     const user = props.user
     const setUser = props.setUser
-    const loaded = props.loaded
+    // const loaded = props.loaded
     const boardIndex = props.boardIndex
     const tableIndex = props.tableIndex
     const setTableIndex = props.setTableIndex
