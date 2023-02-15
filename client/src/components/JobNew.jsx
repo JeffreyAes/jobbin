@@ -1,5 +1,6 @@
 import React from 'react'
-
+import AddCircleOutlineSharpIcon from '@mui/icons-material/AddCircleOutlineSharp';
+import Button from '@mui/material/Button';
 const JobNew = (props) => {
     const setTableIndex = props.setTableIndex
 
@@ -12,11 +13,9 @@ const JobNew = (props) => {
     }
 
     return (
-        <div>
-            <button className='btn btn-info' onClick={() => {
+            <Button variant='text' color='primary' size='medium'   onClick={() => {
                 onSubmitHandler()
-            }}>+</button>
-        </div>
+            }}><AddCircleOutlineSharpIcon fontSize='large' /></Button>
         
     )
 

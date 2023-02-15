@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import { useParams } from 'react-router-dom'
+import Button from '@mui/material/Button';
 
 const BoardDelete = (props) => {
     const { id } = useParams()
@@ -31,11 +32,9 @@ const BoardDelete = (props) => {
     }
 
     return (
-        <div>
-            <button disabled={user.board.length===1? true : false} className='btn btn-danger'  onClick={() => {
+            <Button disabled={user.board.length===1? true : false} variant='outlined' color='error' onClick={() => {
                         onSubmitHandler()
-                      }}>Delete</button>
-        </div>
+                      }}>Delete</Button>
     )
 
 }

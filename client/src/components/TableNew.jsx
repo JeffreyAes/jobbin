@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import { useParams } from 'react-router-dom'
+import Button from '@mui/material/Button';
 
 const TableNew = (props) => {
     const { id } = useParams()
@@ -30,11 +31,11 @@ const TableNew = (props) => {
     }
 
     return (
-        <div>
-            <button className='btn btn-info' onClick={() => {
+
+            <Button variant='outlined' color='primary'  onClick={() => {
                 onSubmitHandler()
-            }}>Add Table</button>
-        </div>
+            }}>Add Table</Button>
+
     )
 
 }

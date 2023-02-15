@@ -1,6 +1,7 @@
 import React from 'react'
 import axios from 'axios'
 import { useParams } from 'react-router-dom'
+import Button from '@mui/material/Button';
 
 const BoardNew = (props) => {
     const { id } = useParams()
@@ -33,12 +34,12 @@ const BoardNew = (props) => {
             })
     }
 
-    return (
+    return (   
         <div>
-            <button className='btn btn-info'  onClick={() => {
-                        onSubmitHandler()
-                      }}>Add Board</button>
-        </div>
+            <Button variant='contained' color='info' size='large'  onClick={() => {
+                onSubmitHandler()
+            }}>Add Board</Button>
+            </div>
     )
 
 }

@@ -45,12 +45,11 @@ const BoardList = (props) => {
                 {loaded && user.board.map((text, index) => (
                     <ListItem key={index}  disablePadding>
                         <ListItemButton >
-                        <button  onClick={() => {
+                        <Button variant='text' color='inherit' size='small'  onClick={() => {
                             selectBoard(index)
-                          }}>
-                            
+                          }}>     
                             <ListItemText    primary={text.boardName} />
-                    </button>
+                    </Button>
                             <BoardDelete user={user} boardIndex={index} setBoardIndex={setBoardIndex} setRerender={props.setRerender} />
                         </ListItemButton>
                     </ListItem>
