@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom'
 import BoardTable from '../components/BoardTable'
 import BoardList from '../components/BoardList'
 import BoardNew from '../components/BoardNew'
+import JobForm from '../components/JobForm'
 
 
 
@@ -12,7 +13,9 @@ const Dashboard = (props) => {
     const [user, setUser] = useState()
     const [loaded, setLoaded] = useState(false);
     const [boardIndex, setBoardIndex] = useState(0)
+    const [tableIndex, setTableIndex] = useState()
     const [rerender, setRerender] = useState(false)
+    const [showJobForm, setShowJobForm] = useState(false)
     
     useEffect(() => {
         axios.get('http://localhost:8000/api/users/' + id, { withCredentials: true })
@@ -29,8 +32,10 @@ const Dashboard = (props) => {
         <div>
         <BoardList user={user} setRerender={setRerender} setUser={setUser} loaded={loaded} boardIndex={boardIndex} setBoardIndex={setBoardIndex} />
         <h1>{user?.username} <BoardNew user={user}/></h1>
-        <BoardTable user={user} setRerender={setRerender} setUser={setUser} loaded={loaded } boardIndex={boardIndex} setBoardIndex={setBoardIndex} />
-        
+        {showJobForm === false?
+        <BoardTable setShowJobForm={setShowJobForm} tableIndex={tableIndex} setTableIndex={setTableIndex} user={user} setRerender={setRerender} setUser={setUser} loaded={loaded } boardIndex={boardIndex} setBoardIndex={setBoardIndex} />
+        : <JobForm setShowJobForm={setShowJobForm} user={user} boardIndex={boardIndex} setBoardIndex={setBoardIndex} setTableIndex={setTableIndex} tableIndex={tableIndex} setRerender={setRerender} />
+        }
         </div>
     )
 }
