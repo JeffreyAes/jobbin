@@ -5,6 +5,7 @@ import BoardTable from '../components/BoardTable'
 import BoardList from '../components/BoardList'
 import BoardNew from '../components/BoardNew'
 import JobForm from '../components/JobForm'
+import NavBar from '../components/NavBar'
 
 
 
@@ -16,7 +17,7 @@ const Dashboard = (props) => {
     const [tableIndex, setTableIndex] = useState()
     const [rerender, setRerender] = useState(false)
     const [showJobForm, setShowJobForm] = useState(false)
-    
+
     useEffect(() => {
         axios.get('http://localhost:8000/api/users/' + id, { withCredentials: true })
             .then(res => {
@@ -27,15 +28,18 @@ const Dashboard = (props) => {
             .catch(err => console.error(err));
     }, [rerender]);
 
-    
+
     return (
         <div>
-        <BoardList user={user} setRerender={setRerender} setUser={setUser} loaded={loaded} boardIndex={boardIndex} setBoardIndex={setBoardIndex} />
-        <h1>{user?.username} <BoardNew user={user}/></h1>
-        {showJobForm === false?
-        <BoardTable setShowJobForm={setShowJobForm} tableIndex={tableIndex} setTableIndex={setTableIndex} user={user} setRerender={setRerender} setUser={setUser} loaded={loaded } boardIndex={boardIndex} setBoardIndex={setBoardIndex} />
-        : <JobForm setShowJobForm={setShowJobForm} user={user} boardIndex={boardIndex} setBoardIndex={setBoardIndex} setTableIndex={setTableIndex} tableIndex={tableIndex} setRerender={setRerender} />
-        }
+            <NavBar loaded={loaded} user={user} boardIndex={boardIndex} setBoardIndex={setBoardIndex} tableIndex={tableIndex} setTableIndex={setTableIndex} setRerender={setRerender} />
+            <div className='mt-3'>
+               
+
+                {showJobForm === false ?
+                    <BoardTable setShowJobForm={setShowJobForm} tableIndex={tableIndex} setTableIndex={setTableIndex} user={user} setRerender={setRerender} setUser={setUser} loaded={loaded} boardIndex={boardIndex} setBoardIndex={setBoardIndex} />
+                    : <JobForm setShowJobForm={setShowJobForm} user={user} boardIndex={boardIndex} setBoardIndex={setBoardIndex} setTableIndex={setTableIndex} tableIndex={tableIndex} setRerender={setRerender} />
+                }
+            </div>
         </div>
     )
 }

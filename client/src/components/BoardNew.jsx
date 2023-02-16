@@ -10,6 +10,7 @@ const BoardNew = (props) => {
 
 
     const onSubmitHandler = () => {
+        props.setRerender(true)
         let arr = user.board
         let today = new Date().getFullYear()
         arr.push({
@@ -36,7 +37,7 @@ const BoardNew = (props) => {
 
     return (   
         <div>
-            <Button variant='contained' color='info' size='large'  onClick={() => {
+            <Button variant='outlined' color='info' size='large'  onClick={() => {
                 onSubmitHandler()
             }}>Add Board</Button>
             </div>

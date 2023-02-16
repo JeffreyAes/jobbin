@@ -10,7 +10,6 @@ function App() {
   const [logged, setLogged] = useState(null)
   return (
     <div className="text-center">
-      <h1>Jobbin'</h1>
       <Routes>
         <Route element={<Navigate to='/register' replace />} path='/' ></Route>
         <Route element={<UserRegister logged={logged} setLogged={setLogged} />} path='/register' ></Route>
