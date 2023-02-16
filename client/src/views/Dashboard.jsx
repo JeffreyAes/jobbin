@@ -6,6 +6,7 @@ import BoardList from '../components/BoardList'
 import BoardNew from '../components/BoardNew'
 import JobForm from '../components/JobForm'
 import NavBar from '../components/NavBar'
+import BoardForm from '../components/BoardForm'
 
 
 
@@ -17,6 +18,7 @@ const Dashboard = (props) => {
     const [tableIndex, setTableIndex] = useState()
     const [rerender, setRerender] = useState(false)
     const [showJobForm, setShowJobForm] = useState(false)
+    const [showBoardForm, setShowBoardForm] = useState(false)
 
     useEffect(() => {
         axios.get('http://localhost:8000/api/users/' + id, { withCredentials: true })
@@ -31,14 +33,18 @@ const Dashboard = (props) => {
 
     return (
         <div>
-            <NavBar loaded={loaded} user={user} boardIndex={boardIndex} setBoardIndex={setBoardIndex} tableIndex={tableIndex} setTableIndex={setTableIndex} setRerender={setRerender} />
+            <NavBar setShowBoardForm={setShowBoardForm} loaded={loaded} user={user} boardIndex={boardIndex} setBoardIndex={setBoardIndex} tableIndex={tableIndex} setTableIndex={setTableIndex} setRerender={setRerender} />
             <div className='mt-3'>
-               
+                <h1>{showBoardForm.toString()}</h1>
 
-                {showJobForm === false ?
-                    <BoardTable setShowJobForm={setShowJobForm} tableIndex={tableIndex} setTableIndex={setTableIndex} user={user} setRerender={setRerender} setUser={setUser} loaded={loaded} boardIndex={boardIndex} setBoardIndex={setBoardIndex} />
-                    : <JobForm setShowJobForm={setShowJobForm} user={user} boardIndex={boardIndex} setBoardIndex={setBoardIndex} setTableIndex={setTableIndex} tableIndex={tableIndex} setRerender={setRerender} />
+                {
+                    showJobForm === false && showBoardForm === false?
+                        <BoardTable setShowJobForm={setShowJobForm} tableIndex={tableIndex} setTableIndex={setTableIndex} user={user} setRerender={setRerender} setUser={setUser} loaded={loaded} boardIndex={boardIndex} setBoardIndex={setBoardIndex} />
+                        : showJobForm === true ? <JobForm setShowJobForm={setShowJobForm} user={user} boardIndex={boardIndex} setBoardIndex={setBoardIndex} setTableIndex={setTableIndex} tableIndex={tableIndex} setRerender={setRerender} />
+                            : showBoardForm === true ? <BoardForm setShowBoardForm={setShowBoardForm} user={user} setRerender={setRerender} />
+                                :""
                 }
+
             </div>
         </div>
     )

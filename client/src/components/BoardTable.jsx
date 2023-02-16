@@ -3,6 +3,11 @@ import TableNew from './TableNew'
 import TableDelete from './TableDelete'
 import JobNew from './JobNew'
 import JobDelete from './JobDelete'
+import FormControl, { useFormControl } from '@mui/material/FormControl';
+import OutlinedInput from '@mui/material/OutlinedInput';
+import Box from '@mui/material/Box';
+import FormHelperText from '@mui/material/FormHelperText';
+
 
 const BoardTable = (props) => {
     const user = props.user
@@ -11,6 +16,11 @@ const BoardTable = (props) => {
     const boardIndex = props.boardIndex
     const tableIndex = props.tableIndex
     const setTableIndex = props.setTableIndex
+    
+
+
+    
+
 
     return (
         <div className="">

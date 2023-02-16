@@ -32,11 +32,11 @@ const NavBar = (props) => {
                     <Typography sx={{m:2}} variant="h4" component="div" >
                         Jobbin'  
                     </Typography>
-                        <BoardNew user={user} setRerender={setRerender} />
-                    <Typography variant="h4" component="div" sx={{flexGrow:3.5}}  >
+                        <BoardNew setShowBoardForm={props.setShowBoardForm} user={user} setRerender={setRerender} />
+                    <Typography variant="h4" component="div" sx={{flexGrow:0.8}}  >
                         {user?.username}
                     </Typography>
-                    <Logout />
+                    <Logout sx={{flexGrow:1}}/>
                 </Toolbar>
             </AppBar>
         </Box>
