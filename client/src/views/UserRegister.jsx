@@ -27,8 +27,8 @@ const UserRegister = (props) => {
                 props.setLogged(true)
                 // logic for setting default board:
                 let arr = []
-                let date = new Date();
-                let today = new Date(date.getFullYear(), 1).toLocaleDateString()
+                let today = new Date().getFullYear()
+
                 arr.push({
                     boardName: `${today}'s job search`,
                     table: {

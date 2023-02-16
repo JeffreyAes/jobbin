@@ -35,7 +35,6 @@ const Dashboard = (props) => {
         <div>
             <NavBar setShowBoardForm={setShowBoardForm} loaded={loaded} user={user} boardIndex={boardIndex} setBoardIndex={setBoardIndex} tableIndex={tableIndex} setTableIndex={setTableIndex} setRerender={setRerender} />
             <div className='mt-3'>
-                <h1>{showBoardForm.toString()}</h1>
 
                 {
                     showJobForm === false && showBoardForm === false?
