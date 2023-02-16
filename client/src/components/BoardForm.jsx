@@ -49,7 +49,7 @@ const BoardForm = (props) => {
 
     return (
         <div className='container'>
-            <Button type='button' variant="contained" color="secondary" onClick={() => {
+            <Button className='d-flex justify-content-start' type='button' variant="contained" color="secondary" onClick={() => {
                 returnToDashboard()
             }}>Back</Button>
             <Box
@@ -73,7 +73,9 @@ const BoardForm = (props) => {
                         onChange={(e) => setBoardName(e.target.value)} value={boardName}
                     />
                 </FormControl>
-                <Button type='submit' variant="contained" color="success">Save Job</Button>
+                <div>
+                <Button  type='submit' variant="contained" color="success">Save Board</Button>
+                </div>
             </Box>
         </div >
     )
