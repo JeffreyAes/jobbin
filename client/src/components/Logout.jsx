@@ -13,7 +13,7 @@ const Logout = (props) => {
     }
 
     return (
-        <Button onClick={logout}  color="error">Logout</Button>
+        <Button onClick={logout} sx={{flex:1, maxWidth: 100}}   color="error">Logout</Button>
     )
 }
 

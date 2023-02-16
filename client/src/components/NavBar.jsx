@@ -28,15 +28,15 @@ const NavBar = (props) => {
         <Box >
             <AppBar position="static" color='inherit'>
                 <Toolbar >
-                <BoardList  loaded={loaded} user={user} setRerender={setRerender}  boardIndex={boardIndex} setBoardIndex={setBoardIndex} />
+                <BoardList  sx={{flex:1}}  loaded={loaded} user={user} setRerender={setRerender}  boardIndex={boardIndex} setBoardIndex={setBoardIndex} />
                     <Typography sx={{m:2}} variant="h4" component="div" >
                         Jobbin'  
                     </Typography>
                         <BoardNew setShowBoardForm={props.setShowBoardForm} user={user} setRerender={setRerender} />
-                    <Typography variant="h4" component="div" sx={{flexGrow:0.8}}  >
+                    <Typography variant="h4" component="div" sx={{flex:1, mr:25}}  >
                         {user?.username}
                     </Typography>
-                    <Logout sx={{flexGrow:1}}/>
+                    <Logout />
                 </Toolbar>
             </AppBar>
         </Box>
