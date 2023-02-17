@@ -8,32 +8,27 @@ import FormControl from '@mui/material/FormControl';
 
 
 
-const BoardForm = (props) => {
+const TableForm = (props) => {
     const { id } = useParams()
     const user = props.user
-    const [boardName, setBoardName] = useState("")
-    let today = new Date().getFullYear()
+    const [tableName, setTableName] = useState(null)
+    const tableIndex = props.tableIndex
+    const boardIndex = props.boardIndex
+    const oldTableName = props.oldTableName
 
     const handleSubmit = e => {
         e.preventDefault();
         let arr = user.board
-        arr.push({
-            boardName: boardName,
-            table: {
-                list:
-                    [
-                        { name: "Wishlist", value: [] }, { name: "Applied", value: [] },
-                        { name: "Interview", value: [] }, { name: "Offer", value: [] }, { name: "Denied", value: [] }
-                    ]
-            }
-        })
+        let newArr = arr[boardIndex].table.list[tableIndex].name
+        user.board[boardIndex].table.list[tableIndex].name = newArr.replace(oldTableName, tableName === null ? oldTableName : tableName)
         axios.put('http://localhost:8000/api/users/' + id, {
             board: arr
         }, { withCredentials: true })
             .then(res => {
-                props.setRerender(true)
-                props.setShowBoardForm(false)
                 console.log(res)
+                props.setRerender(true)
+                props.setShowTableEdit(false)
+
             })
             .catch(err => {
                 console.log(err)
@@ -41,14 +36,16 @@ const BoardForm = (props) => {
     }
 
     const returnToDashboard = () => {
-        props.setShowBoardForm(false)
+        props.setShowTableEdit(false)
     }
 
     return (
-        <div className='container'>
+        <div className="container">
+
             <Button className='d-flex justify-content-start' type='button' variant="contained" color="secondary" onClick={() => {
                 returnToDashboard()
             }}>Back</Button>
+
             <Box
                 component="form"
                 sx={{ minWidth: 120 }}
@@ -56,27 +53,27 @@ const BoardForm = (props) => {
                 autoComplete="off"
                 onSubmit={handleSubmit}
             >
-
+                <h1>{oldTableName}</h1>
 
                 <FormControl sx={{ m: 1, minWidth: 120 }}>
 
                     <TextField
                         required
-                        id="boardName"
-                        label="Board Name"
+                        id="tableName"
+                        label="New Table Name"
                         type="text"
                         variant="standard"
-                        placeholder={`${today}'s Job Search `}
-                        onChange={(e) => setBoardName(e.target.value)} value={boardName}
+                        value={tableName !== null ? tableName : oldTableName}
+                        onChange={(e) => setTableName(e.target.value)}
                     />
                 </FormControl>
                 <div>
-                <Button  type='submit' variant="contained" color="success">Save Board</Button>
+                    <Button type='submit' variant="text" color="success">Save Table</Button>
                 </div>
             </Box>
-        </div >
+        </div>
     )
 
 }
 
-export default BoardForm
+export default TableForm 

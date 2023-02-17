@@ -62,7 +62,6 @@ const JobDetail = (props) => {
                             props.setRerender(true)
                             props.setShowDetail(false)
                             console.log(res)
-                            console.log(tableIndex)
                         })
                         .catch(err => {
                             console.log(err)
@@ -73,7 +72,6 @@ const JobDetail = (props) => {
                     console.log(err)
                 })
         } else {
-            console.log("hello")
 
 
             let arr = user.board
@@ -98,7 +96,6 @@ const JobDetail = (props) => {
                     props.setRerender(true)
                     props.setShowDetail(false)
                     console.log(res)
-                    console.log(tableIndex)
                 })
                 .catch(err => {
                     console.log(err)
@@ -107,7 +104,6 @@ const JobDetail = (props) => {
     }
     const returnToDashboard = () => {
         props.setShowDetail(false)
-        console.log(tableIndex)
     }
 
     const handleChange = (event) => {

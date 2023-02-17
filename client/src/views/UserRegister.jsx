@@ -30,12 +30,12 @@ const UserRegister = (props) => {
                 let today = new Date().getFullYear()
 
                 arr.push({
-                    boardName: `${today}'s job search`,
+                    boardName: `${today}'s Job Search`,
                     table: {
                         list:
                             [
-                                { name: "wishlist", value: [] }, { name: "applied", value: [] },
-                                { name: "interview", value: [] }, { name: "offer", value: [] }, { name: "denied", value: [] }
+                                { name: "Wishlist", value: [] }, { name: "Applied", value: [] },
+                                { name: "Interview", value: [] }, { name: "Offer", value: [] }, { name: "Denied", value: [] }
                             ]
                     }
                 })

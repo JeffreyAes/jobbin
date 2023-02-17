@@ -1,7 +1,7 @@
 import React from 'react'
 import axios from 'axios'
 import { useParams } from 'react-router-dom'
-import Button from '@mui/material/Button';
+import IconButton from '@mui/material/IconButton';
 import DeleteIcon from '@mui/icons-material/Delete';
 
 const TableDelete = (props) => {
@@ -36,9 +36,9 @@ const TableDelete = (props) => {
 
     return (
 
-        <Button variant="outlined" color='error' size='small' onClick={() => {
+        <IconButton variant="outlined" color='error' size='small' onClick={() => {
             onSubmitHandler()
-        }}><DeleteIcon fontSize='medium' /></Button>
+        }}><DeleteIcon fontSize='medium' /></IconButton>
 
     )
 }
