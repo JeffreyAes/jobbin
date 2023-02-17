@@ -6,7 +6,7 @@ import JobForm from '../components/JobForm'
 import NavBar from '../components/NavBar'
 import BoardForm from '../components/BoardForm'
 import JobDetail from '../components/JobDetail'
-
+import Box from '@mui/material/Box';
 
 
 const Dashboard = (props) => {
@@ -33,21 +33,22 @@ const Dashboard = (props) => {
 
 
     return (
-        <div>
+        <Box>
+
             <NavBar setShowBoardForm={setShowBoardForm} loaded={loaded} user={user} boardIndex={boardIndex} setBoardIndex={setBoardIndex} tableIndex={tableIndex} setTableIndex={setTableIndex} setRerender={setRerender} />
             <div className='mt-3'>
 
                 {
                     showJobForm === false && showBoardForm === false && showDetail === false?
-                        <BoardTable setJobIndex={setJobIndex} setShowDetail={setShowDetail} setShowJobForm={setShowJobForm} tableIndex={tableIndex} setTableIndex={setTableIndex} user={user} setRerender={setRerender} loaded={loaded} boardIndex={boardIndex} setBoardIndex={setBoardIndex} />
-                        : showJobForm === true ? <JobForm setShowJobForm={setShowJobForm} user={user} boardIndex={boardIndex} setBoardIndex={setBoardIndex} setTableIndex={setTableIndex} tableIndex={tableIndex} setRerender={setRerender} />
-                            : showBoardForm === true ? <BoardForm setShowBoardForm={setShowBoardForm} user={user} setRerender={setRerender} />
-                                :showDetail === true? <JobDetail jobIndex={jobIndex} setShowDetail={setShowDetail} tableIndex={tableIndex}  user={user} setRerender={setRerender} boardIndex={boardIndex}  />
-                                    :""
+                    <BoardTable setJobIndex={setJobIndex} setShowDetail={setShowDetail} setShowJobForm={setShowJobForm} tableIndex={tableIndex} setTableIndex={setTableIndex} user={user} setRerender={setRerender} loaded={loaded} boardIndex={boardIndex} setBoardIndex={setBoardIndex} />
+                    : showJobForm === true ? <JobForm setShowJobForm={setShowJobForm} user={user} boardIndex={boardIndex} setBoardIndex={setBoardIndex} setTableIndex={setTableIndex} tableIndex={tableIndex} setRerender={setRerender} />
+                    : showBoardForm === true ? <BoardForm setShowBoardForm={setShowBoardForm} user={user} setRerender={setRerender} />
+                    :showDetail === true? <JobDetail jobIndex={jobIndex} setShowDetail={setShowDetail} tableIndex={tableIndex}  user={user} setRerender={setRerender} boardIndex={boardIndex}  />
+                    :""
                 }
 
             </div>
-        </div>
+                </Box>
     )
 }
 

@@ -16,7 +16,7 @@ const BoardNew = (props) => {
 
         return (
             <div>
-                <Button variant='outlined' color='info' size='large' onClick={() => {
+                <Button variant='outlined' color='primary' size='large' onClick={() => {
                     submitHandler()
                 }}>Add Board</Button>
             </div>

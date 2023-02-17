@@ -46,7 +46,7 @@ const JobForm = (props) => {
 
     return (
         <div className='container'>
-            <Button type='button' variant="contained" color="secondary" onClick={() => {
+            <Button type='button' variant="contained" className='d-flex justify-content-start' color="secondary" onClick={() => {
                 returnToDashboard()
             }}>Back</Button>
             <Box
@@ -117,7 +117,7 @@ const JobForm = (props) => {
                         </Select>
                     </FormControl>
                 </div>
-                <Button type='submit' variant="contained" color="success">Save Job</Button>
+                <Button disabled={jobTitle.length === 0 || company.length === 0? true: false} type='submit' variant="contained" color="success">Save Job</Button>
             </Box>
         </div >
     )

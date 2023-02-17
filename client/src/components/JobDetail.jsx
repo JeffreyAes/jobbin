@@ -113,14 +113,15 @@ const JobDetail = (props) => {
 
     const handleChange = (event) => {
         setRemote(event.target.checked);
-      };
+    };
 
     return (
         <div className='container'>
-            <Button type='button' variant="contained" color="secondary" onClick={() => {
+            <Button type='button' variant="contained" className='d-flex justify-content-start' color="secondary" onClick={() => {
                 returnToDashboard()
             }}>Back</Button>
             <Box
+                // color={}
                 component="form"
                 sx={{ minWidth: 120 }}
                 noValidate
@@ -164,7 +165,7 @@ const JobDetail = (props) => {
                             type="text"
                             variant="standard"
                             value={jobURL !== null ? jobURL : jobData[2]}
-                            onChange={(e) => setJobURL(e.target.value)} 
+                            onChange={(e) => setJobURL(e.target.value)}
                         />
                     </FormControl>
                     <FormControl sx={{ m: 1, minWidth: 120 }}>
@@ -176,12 +177,12 @@ const JobDetail = (props) => {
                             type="text"
                             variant="standard"
                             value={sallery !== null ? sallery : jobData[3]}
-                            onChange={(e) => setSallery(e.target.value)} 
+                            onChange={(e) => setSallery(e.target.value)}
                         />
                     </FormControl>
                 </div>
                 <div>
-                    <FormControl sx={{ m: 1, minWidth: 200 }}>
+                    <FormControl sx={{ m: 1, minWidth: 250, marginRight: 8 }}>
 
                         <TextField
                             required
@@ -189,15 +190,15 @@ const JobDetail = (props) => {
                             label="Location"
                             type="text"
                             variant="standard"
-                            onChange={(e) => setLocation(e.target.value)} 
-                            value={location !== null? location : jobData[4]}
+                            onChange={(e) => setLocation(e.target.value)}
+                            value={location !== null ? location : jobData[4]}
                         />
                     </FormControl>
 
                     <FormControl>
                         <FormControlLabel control={<Checkbox />}
                             label="Remote"
-                            checked={remote===null? jobData[5] : remote===null && jobData[5] === null? false : remote }
+                            checked={remote === null ? jobData[5] : remote === null && jobData[5] === null ? false : remote}
                             onChange={(e) => handleChange(e)} value={remote}
                         />
                     </FormControl>
@@ -240,13 +241,17 @@ const JobDetail = (props) => {
                     </FormControl>
                     <div>
                         <FormControl sx={{ m: 1, minWidth: 240 }}>
-                            <TextareaAutosize
-                                aria-label="minimum height"
-                                minRows={3}
-                                style={{ width: 240 }}
-                                value={description !== null? description : jobData[6]}
+                            <TextField
+                                id="standard-multiline-static"
+                                label="Description"
+                                multiline
+                                rows={5}
+                                variant="standard"
+                                style={{ width: 450 }}
+                                value={description !== null ? description : jobData[6]}
                                 onChange={(e) => setDescription(e.target.value)}
                             />
+
                         </FormControl>
                     </div>
                 </div>
