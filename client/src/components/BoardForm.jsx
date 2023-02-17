@@ -5,15 +5,12 @@ import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import FormControl from '@mui/material/FormControl';
-import MenuItem from '@mui/material/MenuItem';
-import Select from '@mui/material/Select';
-import { InputLabel } from '@mui/material';
+
 
 
 const BoardForm = (props) => {
     const { id } = useParams()
     const user = props.user
-    const boardIndex = props.boardIndex
     const [boardName, setBoardName] = useState("")
     let today = new Date().getFullYear()
 
