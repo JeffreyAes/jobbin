@@ -12,14 +12,22 @@ import FormHelperText from '@mui/material/FormHelperText';
 const BoardTable = (props) => {
     const user = props.user
     const setUser = props.setUser
-    // const loaded = props.loaded
     const boardIndex = props.boardIndex
     const tableIndex = props.tableIndex
     const setTableIndex = props.setTableIndex
-    
 
 
-    
+    const onSubmitHandler = (jobIndex, tableIndex) => {
+        props.setRerender(true)
+        props.setJobIndex(jobIndex)
+        setTableIndex(tableIndex)
+        props.setShowDetail(true)
+
+    }
+
+
+
+
 
 
     return (
@@ -59,14 +67,23 @@ const BoardTable = (props) => {
                         <tr>
                             {user?.board[boardIndex].table.list.map((list, i) =>
                                 <td key={i}>{list.value.map((val, j) =>
-                                    <span className='inline' key={j}>{val[0]}  <JobDelete
-                                        tableIndex={i}
-                                        jobIndex={j}
-                                        user={user}
-                                        setUser={setUser}
-                                        setRerender={props.setRerender}
-                                        boardIndex={boardIndex}
-                                    /></span>
+                                    <div  key={j} className="d-flex justify-content-center">
+
+                                        <span className='inline' onClick={() => {
+                                            onSubmitHandler(j, i)
+                                        }}>  {val[0]}  </span>
+                                        <span className='inline'>
+
+                                            <JobDelete
+                                                tableIndex={i}
+                                                jobIndex={j}
+                                                user={user}
+                                                setUser={setUser}
+                                                setRerender={props.setRerender}
+                                                boardIndex={boardIndex}
+                                            />
+                                        </span>
+                                    </div>
                                 )} </td>
                             )}
                             <td></td>
