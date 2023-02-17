@@ -41,7 +41,7 @@ const Dashboard = (props) => {
 
                 {
                     showJobForm === false && showBoardForm === false && showDetail === false?
-                        <BoardTable setJobIndex={setJobIndex} setShowDetail={setShowDetail} setShowJobForm={setShowJobForm} tableIndex={tableIndex} setTableIndex={setTableIndex} user={user} setRerender={setRerender} setUser={setUser} loaded={loaded} boardIndex={boardIndex} setBoardIndex={setBoardIndex} />
+                        <BoardTable setJobIndex={setJobIndex} setShowDetail={setShowDetail} setShowJobForm={setShowJobForm} tableIndex={tableIndex} setTableIndex={setTableIndex} user={user} setRerender={setRerender} loaded={loaded} boardIndex={boardIndex} setBoardIndex={setBoardIndex} />
                         : showJobForm === true ? <JobForm setShowJobForm={setShowJobForm} user={user} boardIndex={boardIndex} setBoardIndex={setBoardIndex} setTableIndex={setTableIndex} tableIndex={tableIndex} setRerender={setRerender} />
                             : showBoardForm === true ? <BoardForm setShowBoardForm={setShowBoardForm} user={user} setRerender={setRerender} />
                                 :showDetail === true? <JobDetail jobIndex={jobIndex} setShowDetail={setShowDetail} tableIndex={tableIndex}  user={user} setRerender={setRerender} boardIndex={boardIndex}  />

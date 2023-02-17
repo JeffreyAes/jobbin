@@ -197,7 +197,7 @@ const JobDetail = (props) => {
                     <FormControl>
                         <FormControlLabel control={<Checkbox />}
                             label="Remote"
-                            checked={remote===null? jobData[5] : jobData[5]===null? false : remote }
+                            checked={remote===null? jobData[5] : remote===null && jobData[5] === null? false : remote }
                             onChange={(e) => handleChange(e)} value={remote}
                         />
                     </FormControl>
