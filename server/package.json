@@ -25,8 +25,8 @@
     "nodemon": "^2.0.20"
   },
   "scripts": {
-    "dev": "nodemon --exec babel-node server.js",
-    "build": "babel ../server -d dist",
+    "dev": "nodemon --exec babel-node src/server.js",
+    "build": "babel src -d dist",
     "start": "node dist/server.js",
     "both-dev": "concurrently \"npm run dev\" \"npm --prefix ../client/ run start\""
   }
