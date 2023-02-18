@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-mongoose.connect(process.env.MONGO_URI, {
+mongoose.connect("mongodb://0.0.0.0:27017/jobbindb", {
     useNewUrlParser: true,
     useUnifiedTopology: true,
 })
