@@ -24,7 +24,6 @@ const BoardDelete = (props) => {
                 setBoardIndex(0)
                 setRerender(true)
                 console.log(res)
-                console.log(user.board.boardName)
             })
             .catch(err => {
                 console.log(err)
