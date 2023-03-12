@@ -3,7 +3,7 @@ Jobbin is a simple and easy to use app designed to make job hunting a breeze. Bu
 With Jobble you can dynamically and effortlessly log different job listings around as you progress in your job search. Just applied to a job? add it to your Applications Table. 3 days later you get an interview for it? drag that sucker into the Interview table! Plus you can create your own tables so whatever it is you need to track, Jobbin's got you covered.
 
 # Start-up
-After registering an account, you can immediately begin tracking your job hunt by creating a board. All you have to do is click the "Add Board", give it a name and voila, you made your first Jobble board!
+After registering an account, you can immediately begin tracking your job hunt by creating a board. All you have to do is click the "Add Board", give it a name and voila, you made your first Jobbin' board!
 
 Once you've created your board you will be able to add tables. Tables are columns that are able to hold lists of whatever you need to track.
 
